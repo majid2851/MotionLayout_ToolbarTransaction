@@ -1,0 +1,91 @@
+{
+  ConstraintSets: {
+    start: {
+      profile_pic: {
+        width: 40,
+        height: 40,
+        start: ['parent','start',16],
+        top: ['parent','top',16],
+        custom: {
+          background: '#00FFFF'
+        }
+      },
+      username: {
+        top: ['profile_pic', 'top', 0],
+        bottom: ['profile_pic', 'bottom', 0],
+        start: ['profile_pic', 'end', 16],
+        custom: {
+          textColor: "#00FFFF"
+        }
+      },
+      box: {
+        width: 'spread',
+        height: 'spread',
+        start: ['parent', 'start'],
+        end: ['parent', 'end'],
+        bottom: ['parent', 'bottom',-16],
+        top: ['parent', 'top']
+      }
+    },
+
+    end: {
+      profile_pic: {
+        width: 150,
+        height: 150,
+        start: ['parent','start'],
+        end: ['parent','end'],
+        top: ['parent','top',16],
+        custom: {
+          background: '#FF00FF'
+        }
+      },
+      username: {
+        top: ['profile_pic', 'bottom', 16],
+        end: ['parent', 'end', 0],
+        start: ['parent', 'start', 0],
+        custom: {
+          textColor: "#FF00FF"
+        }
+      },
+
+      box: {
+        width: 'spread',
+        height: 'spread',
+        start: ['parent', 'start'],
+        end: ['parent', 'end'],
+        bottom: ['parent', 'bottom',-16],
+        top: ['parent', 'top']
+      }
+    }
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      pathMotionArc: 'startHorizontal',
+      KeyFrames: {
+        KeyAttributes:[
+          {
+            target: ['profile_pic'],
+            frames: [0,50,100],
+//            rotationZ: [0, 180,360],
+          },
+          {
+            target: ['username'],
+            frames: [0,50,100],
+            translationX: [0, 70, 0],
+//            rotationZ: [0, 180, 360],
+          }
+        ],
+
+
+
+      }
+    }
+
+
+  }
+
+
+
+}
